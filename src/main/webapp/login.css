@@ -1,0 +1,52 @@
+#form1 {
+    display: none;
+    padding-top: 50px;
+    opacity:.7;
+}
+
+#form2 {
+
+    opacity: .7;
+}
+
+#corpo{
+    height: 100%;
+}
+
+.bg {
+    height: 100%;
+background-color:white;
+
+}
+
+#container{
+    padding-top: 115px;
+    
+}
+
+#btnCadastrar{
+    margin-top: 10px;
+}
+
+#btnLogin {
+
+    margin-top: 10px;
+}
+
+#titulo {
+
+    margin-left: 500px;
+    margin-top: 50px;
+}
+
+.h1{
+    word-wrap: break-word;
+     -webkit-hyphens: auto;
+     -moz-hyphens: auto;
+     -ms-hyphens: auto;
+     -o-hyphens: auto;
+     hyphens: auto;
+}
+
+
+

@@ -1,0 +1,10 @@
+com\mycompany\rpgfichas\JAXRSConfiguration.class
+controller\LoginController.class
+beans\UsuarioBEAN.class
+controller\CadastroController.class
+repositorios\UsarioRepo.class
+models\Main.class
+com\mycompany\rpgfichas\resources\JavaEE8Resource.class
+models\Usuario.class
+com\mycompany\rpgfichas\RPGFichasAPI.class
+models\Ficha.class
