@@ -47,6 +47,7 @@ botao2.addEventListener("click", function (e) {
 
 formularioLogin.addEventListener("submit", function (e) {
     e.preventDefault();
+    validarLogin();
 
 })
 
@@ -82,24 +83,27 @@ formulario.addEventListener("submit", function (e) {
 function validarLogin() {
 
  var dados1 = {
-        "username": document.getElementById("usernameId").value,
+        "nickname": document.getElementById("usernameId").value,
         "password": document.getElementById("passwordId").value
     }
+    
+    console.log(dados1);
 
-    var url1 = " https://tads-trello.herokuapp.com/api/trello/login";
+    var url1 = "resources/api/v1/login";
     var xhttp1 = new XMLHttpRequest();
     xhttp1.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             var obj = JSON.parse(this.responseText);
             console.log(obj);
             console.log("Usuário Válido");
+            alert("Usuário Válido!")
            sessionStorage.setItem("token",JSON.stringify(obj.token));
-           window.location = "../html/paginainicial.html";
+           window.location = "paginainicial.html";
         } else if (this.readyState == 4 && this.status == 400) {
             alert("Usuário ou senha inválidos");
         }
     }
-    xhttp1.open("POST", url1, true);
+    xhttp1.open("GET", url1, true);
     xhttp1.setRequestHeader("Content-type", "application/json");
     xhttp1.send(JSON.stringify(dados1));
 

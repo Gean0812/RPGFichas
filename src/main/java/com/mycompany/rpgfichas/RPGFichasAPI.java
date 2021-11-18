@@ -9,7 +9,9 @@ import beans.UsuarioBEAN;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -52,9 +54,24 @@ public class RPGFichasAPI {
 
     }
     
-    public boolean login(){
+    @POST
+    @Path("/login")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public boolean login(UsuarioBEAN usu){
         
-        return false;
+        EntityManagerFactory factory;
+        factory = Persistence.createEntityManagerFactory("TB_USUARIO");
+        EntityManager em = factory.createEntityManager();
+        Query q = em.createQuery("select NICKNAME and SENHA from TB_USUARIO");
+        Usuario user = new Usuario();
+              if(user.getNickname() == usu.getNickname() && user.getPassword() == usu.getPassword()){
+                          return true;
+                          
+                  
+              } else {
+                  return false;
+              }
         
     }
     
